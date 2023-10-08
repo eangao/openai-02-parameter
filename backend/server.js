@@ -27,7 +27,8 @@ async function runCompletion(prompt) {
     temperature: 1,
     max_tokens: 10,
     top_p: 1,
-    n: 3,
+    // n: 3,
+    echo: true,
     frequency_penalty: 0,
     presence_penalty: 0,
   });
