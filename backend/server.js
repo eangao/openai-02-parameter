@@ -19,11 +19,17 @@ const configuration = new Configuration({
 const openai = new OpenAIApi(configuration);
 
 //build the runCompletion which sends a request to the OPENAI Completion API
+//runCompletion
 async function runCompletion(prompt) {
   const response = await openai.createCompletion({
     model: "text-davinci-003",
     prompt: prompt,
-    max_tokens: 50,
+    temperature: 1,
+    max_tokens: 10,
+    top_p: 1,
+    n: 3,
+    frequency_penalty: 0,
+    presence_penalty: 0,
   });
   return response;
 }
